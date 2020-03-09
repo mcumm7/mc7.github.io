@@ -46,7 +46,7 @@ tag = "tags"
     weight = 2
 
 [[menu.icon]]
-    url = "https://github.com/mc7/"
+    url = "https://github.com/mcumm7/"
     name = "github"
     weight = 2
 
