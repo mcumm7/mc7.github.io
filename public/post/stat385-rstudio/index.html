@@ -1,0 +1,286 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Michael Cummings - STAT 385 RStudio </title>
+
+    
+    
+    <meta content="r, stat385, rstudio, development" name="keywords">
+    
+    <meta content="Michael Cummings - An overview of what I have been learning about R in STAT 385." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="/mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script src="/layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    <link rel="stylesheet" async href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="/self/js/lazysizes.min.js" async></script></head>
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Michael Cummings
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    <dd><a href="/about/">About</a></dd>
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>STAT 385 RStudio</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-03-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/tags/r">
+            <span class="layui-badge" style="vertical-align: 2px;">r</span>
+        </a>
+    
+        <a href="/tags/stat385">
+            <span class="layui-badge" style="vertical-align: 2px;">stat385</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <p>This blog is about what I have been learning about R and RStudio in STAT 385.</p>
+<h2 id="introduction">Introduction</h2>
+<p>RStudio is a really great program that makes learning R feel more &lsquo;approachable&rsquo;. It is farily intuitive in nature and I have yet to encounter any problems using the program.</p>
+<figure>
+    <img src="/rstudio.png"
+         alt="A screenshot of RStudio."/> <figcaption>
+            <p>A screenshot of RStudio.</p>
+        </figcaption>
+</figure>
+
+<h2 id="the-language">The language</h2>
+<p>Already knowing a few programming languages, I felt more at ease when I began to learn R. There are some similarities between R and the other languages I am familiar with, as well as some differences. On the first day of class, the first difference I noticed was the syntax for assigning values to objects.</p>
+<h4 id="php">PHP</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Michael&#34;</span>;
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
+<h4 id="r">R</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">name <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;Michael&#34;</span></code></pre></div>
+<p>There are also some other differences, such as not needing to &lsquo;open&rsquo; and &lsquo;close&rsquo; the code. And also not needing a character to denote a new line. These are just a few examples.</p>
+<h2 id="progress">Progress</h2>
+<p>The first couple of homeworks I was able to get through pretty easily. Homework 3, vectorizing code, was definitley the assignment I struggled with the most. In this assignment, the objective was to take code that we had previously written and re-write a vectorized version of it.</p>
+<p>The code below is my non-vectorized function. As you can see, it is very long.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">roulette <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(bet, amount <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>){ 
+  <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;low&#34;</span>)
+  {
+    low <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>)
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">%in%</span> low)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;high&#34;</span>)
+  {
+    high <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">19</span><span style="color:#f92672">:</span><span style="color:#ae81ff">36</span>)
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">%in%</span> high)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;red&#34;</span>)
+  {
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">2</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;red&#34;</span>)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;black&#34;</span>)
+  {
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">2</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;black&#34;</span>)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;odd&#34;</span>)
+  {
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, replace<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
+    <span style="color:#a6e22e">if</span>((outcome <span style="color:#f92672">%%</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;even&#34;</span>)
+  {
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, replace<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
+    <span style="color:#a6e22e">if</span>((outcome <span style="color:#f92672">%%</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;first&#34;</span>)
+  {
+    first <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>)
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">%in%</span> first)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;second&#34;</span>)
+  {
+    second <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">13</span><span style="color:#f92672">:</span><span style="color:#ae81ff">24</span>)
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">%in%</span> second)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else <span style="color:#a6e22e">if</span>(bet <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;third&#34;</span>)
+  {
+    third <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">25</span><span style="color:#f92672">:</span><span style="color:#ae81ff">36</span>)
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">%in%</span> third)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+  else
+  {
+    outcome <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> wheel[, <span style="color:#ae81ff">1</span>], size<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, replace<span style="color:#f92672">=</span><span style="color:#66d9ef">TRUE</span>)
+    <span style="color:#a6e22e">if</span>(outcome <span style="color:#f92672">==</span> bet)
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#ae81ff">36</span><span style="color:#f92672">*</span>amount))
+    }
+    else
+    {
+      <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;$&#34;</span>,<span style="color:#f92672">-</span>amount))
+    }
+  }
+}</code></pre></div>
+<p>Having completed the successfully completed the assignment, the advantages of having vectorized code are extremely clear to me. I was able to calculate the same result in 0.5 seconds vs 20 seconds, using the vectorized code vs the non-vectorized code respectively.</p>
+<p>Below is the vectorized version of the code from above. Vectorizing the code took it from 126 lines to only 6.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">roulette_vec <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(many_bets)
+{
+  win_lose_random <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#66d9ef">TRUE</span>, <span style="color:#66d9ef">FALSE</span>), size <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(many_bets), replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  prize <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;low&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;high&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;red&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;black&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;odd&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, <span style="color:#e6db74">&#39;even&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, <span style="color:#e6db74">&#39;first&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>, <span style="color:#e6db74">&#39;second&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>, <span style="color:#e6db74">&#39;third&#39;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>)
+  total_prize <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unname</span>(prize[many_bets])<span style="color:#f92672">*</span>win_lose_random
+  total_prize
+}</code></pre></div></div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">Copyright © 2020 Michael Cummings. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

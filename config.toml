@@ -1,0 +1,56 @@
+baseURL = "https://example.com"
+title = "Michael Cummings"
+theme = "erblog"
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+[params]
+    portrait = "//media-exp1.licdn.com/dms/image/C5603AQGQmz_R9W2qbw/profile-displayphoto-shrink_200_200/0?e=1589414400&v=beta&t=Vf0CNUvgWH9VuU3gOJKLjGRFyO5ql1p-kLzDjPyoxQ4"
+    author = "Michael Cummings"
+    # logo = "//blog.ertuil.top/avater.png"
+    bio = """
+    <p> I am a Senior at the University of Illinois Urbana-Champaign, studying Econometrics & Quantitative Economics. </p>
+    <br />
+    <p>I have architected several database solutions for companies with 200+ employees. I am proficient with Adobe Illustrator and Photoshop. I am fluent in CSS, HTML, and PHP.</p>
+    <br />
+    <p>After graduation, I will be working in Product Development at a healthcare software company. </p>
+    <br />
+    <a href="https://drive.google.com/file/d/1bXMqCIcYXWaz4_ZvidWqJY-WE448DwfS/view?usp=sharing" target="_blank"><u>View my resume</u></a>
+    """
+    copyright = "Copyright © 2020 Michael Cummings. All rights reserved."
+    description = "Find me on"
+
+
+[[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+
+# [[menu.main]]
+#     identifier = "zone"
+#     name = "Zone"
+#     url = "/zone/"
+#     weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+
+[[menu.icon]]
+    url = "mailto:mc7@illinois.com"
+    name = "envelope-o"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://github.com/mc7/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/michael-cummings-21b526124/"
+    name = "linkedin"
+    weight = 2

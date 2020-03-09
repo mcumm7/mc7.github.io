@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>networking on Michael Cummings</title>
+    <link>/categories/networking/</link>
+    <description>Recent content in networking on Michael Cummings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unifi Network Solution</title>
+      <link>/post/unifi-network-solution/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/unifi-network-solution/</guid>
+      <description>&lt;p&gt;This blog describes how I planned and deployed a Unifi-based network solution between two buildings, to increase network performance while decreasing overall cost.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

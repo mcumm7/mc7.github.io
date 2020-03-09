@@ -1,0 +1,212 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Michael Cummings - Unifi Network Solution </title>
+
+    
+    
+    <meta content="unifi, networking, Unifi" name="keywords">
+    
+    <meta content="Michael Cummings - A description of how I built a Unifi network to link two buildings, with seperate intranets." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="/mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script src="/layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    <link rel="stylesheet" async href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="/self/js/lazysizes.min.js" async></script></head>
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Michael Cummings
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/about/">About</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    <dd><a href="/about/">About</a></dd>
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>Unifi Network Solution</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-03-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/tags/unifi">
+            <span class="layui-badge" style="vertical-align: 2px;">unifi</span>
+        </a>
+    
+        <a href="/tags/networking">
+            <span class="layui-badge" style="vertical-align: 2px;">networking</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <p>This blog describes how I planned and deployed a Unifi-based network solution between two buildings, to increase network performance while decreasing overall cost.</p>
+<h2 id="preparation">Preparation</h2>
+<p>I began by creating a diagram of the buildings and mapping out where I would need to run CAT 6a cabling.</p>
+<figure>
+    <img src="/network-diagram.jpg"
+         alt="My final diagram depicting layout of equipment and cabling."/> <figcaption>
+            <p>My final diagram depicting layout of equipment and cabling.</p>
+        </figcaption>
+</figure>
+
+<p>The network provider is Xfinity. The provided link is 1 Gbps. The Xfinity Xfi gateway is set to <em>Bridge Mode</em>, enabling passthrough of the WAN to the USG.</p>
+<h2 id="hardware">Hardware</h2>
+<p>The USG, or Unifi Security Gateway, is the router (or firewall) for this network. It splits the network into two chunks, LAN 1 and LAN 2, used for building 1 and building 2 respectively. The buildings are linked by a high-strength outdoor rated CAT 6a cable. Splitting the network into seperate LAN&rsquo;s provides increased security, without affecting overall thoroughput or cost.</p>
+<p>The access points are powered using POE (power over ethernet). To power such a large number of access points, I needed a powerful switch. I opted for the Unifi Switch 8 150W. It provides the number of ports needed as well as the amount of power.</p>
+<p>The Unifi Cloud Key Gen2 (UCK-G2) is the &ldquo;brains&rdquo; of the network. It is a hosted controller for managing all of the Unifi products. It is powered via POE.</p>
+<p>For the access points, I picked the Unifi nanoHD access point. The nanoHD is the successor to the AP AC Pro, providing 4x4 MU-MIMO and 802.11ac Wave 2 capabilities.</p>
+<p>The 3rd floor in building 1 had a special circumstance - they had a lot of devices that would perform much better with a dedicated, wired connection. So, I installed the Unifi Switch 8. Powered by POE, the switch has 7 ports for devices, and one POE port for powering the access point.</p>
+<h2 id="completion">Completion</h2>
+<p>The depoloyment was successful, and the network has been performing optimally for several months now. Using Unifi&rsquo;s WifiAI, the channel distributions are automatically updated, as needed, in the early hours of the morning.</p>
+<figure>
+    <img src="/unifi-control-panel.png"
+         alt="The Unifi network control panel."/> <figcaption>
+            <p>The Unifi network control panel.</p>
+        </figcaption>
+</figure>
+
+<p>As you can see in the figure above, the network is operating at 100% stability with 118 clients connected.</p></div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/unifi-network-solution-copy-2/">
+                                <h2 class="">Unifi Network Solution</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-03-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/tags/unifi">
+            <span class="layui-badge" style="vertical-align: 2px;">unifi</span>
+        </a>
+    
+        <a href="/tags/networking">
+            <span class="layui-badge" style="vertical-align: 2px;">networking</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/unifi-network-solution/">
+                                <h2 class="">Unifi Network Solution</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-03-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/tags/unifi">
+            <span class="layui-badge" style="vertical-align: 2px;">unifi</span>
+        </a>
+    
+        <a href="/tags/networking">
+            <span class="layui-badge" style="vertical-align: 2px;">networking</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">Copyright © 2020 Michael Cummings. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

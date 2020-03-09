@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rstudio on Michael Cummings</title>
+    <link>/categories/rstudio/</link>
+    <description>Recent content in rstudio on Michael Cummings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>STAT 385 RStudio</title>
+      <link>/post/stat385-rstudio/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/stat385-rstudio/</guid>
+      <description>&lt;p&gt;This blog is about what I have been learning about R and RStudio in STAT 385.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
